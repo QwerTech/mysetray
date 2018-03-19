@@ -7,7 +7,6 @@ import lombok.Data;
 import lombok.SneakyThrows;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
-import ru.muzetray.zsearch.zapi.ZApi;
 
 import java.io.File;
 import java.io.InputStream;
@@ -24,7 +23,6 @@ import java.util.List;
 public class SearchByArtistService {
 
     private static final String apkSecret = d("llf7116f22c");
-    private ZApi api;
 
     private RestTemplate requestTemplate;
 
@@ -80,9 +78,6 @@ public class SearchByArtistService {
         return node.get("token").asText();
     }
 
-    public JsonNode getOptions() {
-        return api.options();
-    }
 
     @SneakyThrows
     private final String b(String paramString) {
