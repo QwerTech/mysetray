@@ -46,3 +46,8 @@ dependencyManagement {
 		mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
 	}
 }
+
+test {
+	testLogging.exceptionFormat = 'full'
+	testLogging.showStandardStreams = true
+}
